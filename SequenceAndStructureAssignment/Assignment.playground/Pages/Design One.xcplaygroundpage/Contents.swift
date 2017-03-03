@@ -38,15 +38,9 @@ for x in stride(from: 25, through: 475, by: 50){
     }
 }
 
-//for x in stride(from: 0, through: 500, by: 20){
-//    canvas.drawEllipse(centreX: x, centreY: x, width: x, height: x)
-//}
 
-for x in stride(from: 500, through: 0, by: -20){
-for y in stride(from: 500, through: 0, by: 20){
-    canvas.drawEllipse(centreX: y, centreY: y, width: x, height: x)
-}
-}
+
+
 /*:
  ## Template code
  The code below is necessary to see results in the Assistant Editor at right. Please do not remove.
