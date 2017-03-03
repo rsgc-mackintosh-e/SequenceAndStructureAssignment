@@ -22,8 +22,9 @@ import PlaygroundSupport
 let canvas = Canvas(width: 500, height: 500)
 
 //// Generate a grid
-canvas.drawShapesWithFill = false
+canvas.drawShapesWithFill = true
 canvas.defaultBorderWidth = 1
+
 //
 //
 //// This loop makes a 10 rows of columns
@@ -50,36 +51,47 @@ canvas.defaultBorderWidth = 1
 //    canvas.drawEllipse(centreX: 250, centreY: 250, width: x, height: x)
 //}
 
+canvas.fillColor = Color.white
+
+for x in stride(from: 0, through: 500, by: 500){
+for y in stride(from: 0, through: 500, by: 20){
+    canvas.drawLine(fromX: 250, fromY: 250, toX: x, toY: y)
+}
+}
+
+for x in stride(from: 0, through: 500, by: 500){
+    for y in stride(from: 0, through: 500, by: 20){
+        canvas.drawLine(fromX: 250, fromY: 250, toX: y, toY: x)
+    }
+}
+
 canvas.borderColor = Color.red
 
-for x in stride(from: 0, through: 500, by: 20){
+for x in stride(from: 500, through: 0, by: -20){
     canvas.drawEllipse(centreX: 0, centreY: 0, width: x, height: x)
 }
 
 
 canvas.borderColor = Color.blue
 
-for x in stride(from: 0, through: 500, by: 20){
+for x in stride(from: 500, through: 0, by: -20){
     canvas.drawEllipse(centreX: 500, centreY: 0, width: x, height: x)
 }
 
 canvas.borderColor = Color.green
 
 
-for x in stride(from: 0, through: 500, by: 20){
+for x in stride(from: 500, through: 0, by: -20){
     canvas.drawEllipse(centreX: 500, centreY: 500, width: x, height: x)
 }
 
 canvas.borderColor = Color.purple
 
 
-for x in stride(from: 0, through: 500, by: 20){
+for x in stride(from: 500, through: 0, by: -20){
     canvas.drawEllipse(centreX: 0, centreY: 500, width: x, height: x)
 }
 
-//for x in stride(from: 250, through: 0, by: -25){
-//canvas.drawLine(fromX: 250, fromY: 250, toX: x, toY: x)
-//}
 
 /*:
  ## Template code
