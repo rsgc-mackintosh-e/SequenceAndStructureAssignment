@@ -25,70 +25,49 @@ let canvas = Canvas(width: 500, height: 500)
 canvas.drawShapesWithFill = true
 canvas.defaultBorderWidth = 1
 
-//
-//
-//// This loop makes a 10 rows of columns
-//for x in stride(from: 25, through: 475, by: 50){
-//    
-//    // This loop makes a single column, bottom to top
-//    for y in stride(from: 25, through: 475, by: 50) {
-//        
-//        // Draw the shapes
-//        canvas.drawEllipse(centreX: x, centreY: y, width: 2, height: 2)
-//        canvas.drawRectangle(centreX: x, centreY: y, width: 50, height: 50)
-//    }
-//}
+canvas.fillColor = Color.black
+canvas.drawRectangle(bottomLeftX: 0, bottomLeftY: 0, width: 500, height: 500)
 
-//canvas.fillColor
-//canvas.drawRectangle(bottomLeftX: 50, bottomLeftY: 50, width: 50, height: 50)
-//canvas.drawRectangle(bottomLeftX: 100, bottomLeftY: 100, width: 50, height: 50)
-//
-
-
-//canvas.borderColor = Color.red
-//
-//for x in stride(from: 0, through: 500, by: 20){
-//    canvas.drawEllipse(centreX: 250, centreY: 250, width: x, height: x)
-//}
-
-canvas.fillColor = Color.white
 
 for x in stride(from: 0, through: 500, by: 500){
-for y in stride(from: 0, through: 500, by: 20){
-    canvas.drawLine(fromX: 250, fromY: 250, toX: x, toY: y)
-}
+    for y in stride(from: 0, through: 500, by: 20){
+        canvas.lineColor = Color(hue: y, saturation: 100, brightness: 100, alpha: 100)
+        canvas.drawLine(fromX: 250, fromY: 250, toX: x, toY: y)
+    }
 }
 
 for x in stride(from: 0, through: 500, by: 500){
     for y in stride(from: 0, through: 500, by: 20){
+        canvas.lineColor = Color(hue: y, saturation: 100, brightness: 100, alpha: 100)
         canvas.drawLine(fromX: 250, fromY: 250, toX: y, toY: x)
     }
 }
 
-canvas.borderColor = Color.red
 
-for x in stride(from: 500, through: 0, by: -20){
+canvas.fillColor = Color.black
+
+var c = random(from: 0, toButNotIncluding: 361)
+
+canvas.borderColor = Color.init(hue: c, saturation: 100, brightness: 100, alpha: 100)
+for x in stride(from: 500, through: 0, by: -10){
     canvas.drawEllipse(centreX: 0, centreY: 0, width: x, height: x)
 }
 
-
-canvas.borderColor = Color.blue
-
-for x in stride(from: 500, through: 0, by: -20){
+var sc = (c + 180) % 360
+canvas.borderColor = Color.init(hue: sc, saturation: 100, brightness: 100, alpha: 100)
+for x in stride(from: 500, through: 0, by: -10){
     canvas.drawEllipse(centreX: 500, centreY: 0, width: x, height: x)
 }
 
-canvas.borderColor = Color.green
+canvas.borderColor = Color.init(hue: c, saturation: 100, brightness: 100, alpha: 100)
 
-
-for x in stride(from: 500, through: 0, by: -20){
+for x in stride(from: 500, through: 0, by: -10){
     canvas.drawEllipse(centreX: 500, centreY: 500, width: x, height: x)
 }
 
-canvas.borderColor = Color.purple
+canvas.borderColor = Color.init(hue: sc, saturation: 100, brightness: 100, alpha: 100)
 
-
-for x in stride(from: 500, through: 0, by: -20){
+for x in stride(from: 500, through: 0, by: -10){
     canvas.drawEllipse(centreX: 0, centreY: 500, width: x, height: x)
 }
 
